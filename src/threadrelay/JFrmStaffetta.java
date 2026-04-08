@@ -27,9 +27,12 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBase = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         pgbRunner3 = new javax.swing.JProgressBar();
+        jLabel2 = new javax.swing.JLabel();
         pgbRunner2 = new javax.swing.JProgressBar();
         pgbRunner4 = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
         pgbRunner1 = new javax.swing.JProgressBar();
         cmbVelocita = new javax.swing.JComboBox<>();
         btnAvvia = new javax.swing.JButton();
@@ -51,17 +54,49 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        pnlBase.setLayout(null);
+
+        jLabel3.setText("jLabel3");
+        pnlBase.add(jLabel3);
+        jLabel3.setBounds(20, 150, 37, 16);
+        pnlBase.add(pgbRunner3);
+        pgbRunner3.setBounds(6, 128, 379, 55);
+
+        jLabel2.setText("jLabel2");
+        pnlBase.add(jLabel2);
+        jLabel2.setBounds(20, 90, 37, 16);
+        pnlBase.add(pgbRunner2);
+        pgbRunner2.setBounds(6, 67, 379, 55);
+        pnlBase.add(pgbRunner4);
+        pgbRunner4.setBounds(6, 189, 379, 55);
+
+        jLabel1.setText("jLabel1");
+        pnlBase.add(jLabel1);
+        jLabel1.setBounds(20, 20, 37, 16);
+
         pgbRunner1.setBackground(new java.awt.Color(204, 204, 204));
+        pnlBase.add(pgbRunner1);
+        pgbRunner1.setBounds(6, 6, 379, 55);
 
         cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnlBase.add(cmbVelocita);
+        cmbVelocita.setBounds(12, 250, 72, 22);
 
         btnAvvia.setText("Avvia");
+        pnlBase.add(btnAvvia);
+        btnAvvia.setBounds(90, 250, 59, 22);
 
         btnSospende.setText("Sospendi");
+        pnlBase.add(btnSospende);
+        btnSospende.setBounds(161, 250, 78, 22);
 
         btnFerma.setText("Ferma");
+        pnlBase.add(btnFerma);
+        btnFerma.setBounds(245, 250, 63, 22);
 
         btnRiprendi.setText("Riprendi");
+        pnlBase.add(btnRiprendi);
+        btnRiprendi.setBounds(320, 250, 74, 22);
 
         pnlRunner1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -90,6 +125,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        pnlBase.add(pnlRunner1);
+        pnlRunner1.setBounds(397, 6, 122, 55);
+
         pnlRunner3.setBackground(new java.awt.Color(153, 204, 255));
 
         lblRunner3.setText("Runner 3");
@@ -116,6 +154,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
                     .addComponent(lblTempo3))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
+
+        pnlBase.add(pnlRunner3);
+        pnlRunner3.setBounds(397, 128, 122, 55);
 
         pnlRunner4.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -144,6 +185,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        pnlBase.add(pnlRunner4);
+        pnlRunner4.setBounds(397, 189, 122, 55);
+
         pnlRunner2.setBackground(new java.awt.Color(153, 204, 255));
 
         lblRunner2.setText("Runner 2");
@@ -171,68 +215,8 @@ public class JFrmStaffetta extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout pnlBaseLayout = new javax.swing.GroupLayout(pnlBase);
-        pnlBase.setLayout(pnlBaseLayout);
-        pnlBaseLayout.setHorizontalGroup(
-            pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBaseLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnlBaseLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(cmbVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAvvia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSospende)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFerma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRiprendi))
-                    .addGroup(pnlBaseLayout.createSequentialGroup()
-                        .addComponent(pgbRunner4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pnlRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlBaseLayout.createSequentialGroup()
-                        .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pgbRunner1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pgbRunner2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pgbRunner3, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pnlRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlRunner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-        pnlBaseLayout.setVerticalGroup(
-            pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBaseLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pgbRunner1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pgbRunner2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlRunner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pgbRunner3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlRunner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pgbRunner4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlRunner4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAvvia)
-                    .addComponent(btnSospende)
-                    .addComponent(btnFerma)
-                    .addComponent(btnRiprendi))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
+        pnlBase.add(pnlRunner2);
+        pnlRunner2.setBounds(397, 67, 122, 55);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -289,6 +273,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private javax.swing.JButton btnRiprendi;
     private javax.swing.JButton btnSospende;
     private javax.swing.JComboBox<String> cmbVelocita;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblRunner1;
     private javax.swing.JLabel lblRunner2;
     private javax.swing.JLabel lblRunner3;
