@@ -9,7 +9,7 @@ import javax.swing.*; //import libreria java swing per immagine
  *
  * @author martinelli.alessandr
  */
-public class JFrmStaffetta extends javax.swing.JFrame {
+public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
 
     /**
      * Creates new form JFrmStaffetta
@@ -84,14 +84,14 @@ public class JFrmStaffetta extends javax.swing.JFrame {
         pnlBase.add(pgbRunner1);
         pgbRunner1.setBounds(6, 6, 379, 55);
 
-        cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lento", "Normale", "Veloce" }));
+        cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Slow", "Regular", "Fast" }));
         cmbVelocita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbVelocitaActionPerformed(evt);
             }
         });
         pnlBase.add(cmbVelocita);
-        cmbVelocita.setBounds(12, 250, 80, 22);
+        cmbVelocita.setBounds(12, 250, 75, 22);
 
         btnAvvia.setText("Avvia");
         btnAvvia.addActionListener(new java.awt.event.ActionListener() {
@@ -287,6 +287,24 @@ public class JFrmStaffetta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRiprendiActionPerformed
 
+    public void aggiornaValori(int valore, int nRunner){
+        if (nRunner==1){
+            pgbRunner1.setValue(valore);
+            lblThread1.setText(String.valueOf(valore));
+        }
+        else if (nRunner==2){
+            pgbRunner2.setValue(valore);
+            lblThread2.setText(String.valueOf(valore));
+        }
+        else if (nRunner==3){
+            pgbRunner3.setValue(valore);
+            lblThread3.setText(String.valueOf(valore));
+        }
+        else if (nRunner==4){
+            pgbRunner4.setValue(valore);
+            lblThread4.setText(String.valueOf(valore));
+        }
+    }
     /**
      * @param args the command line arguments
      */
