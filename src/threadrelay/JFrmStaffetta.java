@@ -4,13 +4,15 @@
  */
 package threadrelay;
 import javax.swing.*; //import libreria java swing per immagine
-
+import java.util.ArrayList;
 /**
  *
  * @author martinelli.alessandr
  */
 public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
 
+    ArrayList<Runner> partecipanti = new ArrayList<>();
+    ArrayList<Thread> Thread = new ArrayList<>();
     /**
      * Creates new form JFrmStaffetta
      */
@@ -272,7 +274,23 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     }//GEN-LAST:event_cmbVelocitaActionPerformed
 
     private void btnAvviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvviaActionPerformed
-        // TODO add your handling code here:
+        int velocita = 0;
+        if (cmbVelocita.getSelectedItem()=="Slow"){
+            velocita = 90;
+        }
+        else if (cmbVelocita.getSelectedItem()=="Regular"){
+            velocita = 50;
+        }
+        else if (cmbVelocita.getSelectedItem()=="Fast"){
+            velocita = 10;
+        }
+        for (int i=1; i<5; i++){
+            Runner r = new Runner(velocita, i, this);
+            Thread t = new Thread(r);
+            partecipanti.add(r);
+            Thread.add(t);
+        }
+        Thread.get(0).start();
     }//GEN-LAST:event_btnAvviaActionPerformed
 
     private void btnSospendeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSospendeActionPerformed
@@ -290,19 +308,44 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     public void aggiornaValori(int valore, int nRunner){
         if (nRunner==1){
             pgbRunner1.setValue(valore);
-            lblThread1.setText(String.valueOf(valore));
+            if (valore==100){
+             lblTempo1.setText("Fine");
+            }
+            else {
+                lblTempo1.setText(String.valueOf(valore));
+            }
         }
         else if (nRunner==2){
             pgbRunner2.setValue(valore);
-            lblThread2.setText(String.valueOf(valore));
+        if (valore==100){
+            lblTempo2.setText("Fine");
+        }
+        else {
+            lblTempo2.setText(String.valueOf(valore));
+        }
         }
         else if (nRunner==3){
             pgbRunner3.setValue(valore);
-            lblThread3.setText(String.valueOf(valore));
+        if (valore==100){
+            lblTempo3.setText("Fine");
+        }
+        else {
+            lblTempo3.setText(String.valueOf(valore));
+        }
         }
         else if (nRunner==4){
             pgbRunner4.setValue(valore);
-            lblThread4.setText(String.valueOf(valore));
+            if(valore==100){
+                lblTempo4.setText("Fine");
+            }
+            else {
+                lblTempo4.setText(String.valueOf(valore));
+            }
+        }
+    }
+    public void prossimoThread(int nRunner){
+        if (nRunner!=4){
+            Thread.get(nRunner).start();
         }
     }
     /**

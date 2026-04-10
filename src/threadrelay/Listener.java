@@ -9,6 +9,6 @@ package threadrelay;
  * @author Alessandra Martinell
  */
 public interface Listener {
-    public void aggiornaValori(int valore);
-    public void prossimoThread();
+    public void aggiornaValori(int valore, int nRunner);
+    public void prossimoThread(int nRunner);  
 }

@@ -13,10 +13,12 @@ public class Runner implements Runnable {
     private boolean Stop;
     private int Ritardo;
     private int nRunner;
+    private Listener listener;
 
-    public Runner(int Ritardo, int nRunner) {
+    public Runner(int Ritardo, int nRunner, Listener listener) {
         this.Ritardo = Ritardo;
         this.nRunner = nRunner;
+        this.listener = listener;
         Stop = false;
         Pausa = false;
     }
@@ -29,8 +31,7 @@ public class Runner implements Runnable {
      */
     public void run(){
         for(int i = 0; i < 100; i++){
-            if(Stop)return;
-            //Cambio valore
+            if(Stop)return;          
                     synchronized (this) {
                 if (Pausa) {
                     try {
@@ -40,6 +41,10 @@ public class Runner implements Runnable {
                     }
                 }
             }
+            if (i==90){
+                listener.prossimoThread(nRunner);
+            }
+            listener.aggiornaValori(i, nRunner);
             try{
                 Thread.sleep(Ritardo);
             }catch(InterruptedException ie){
