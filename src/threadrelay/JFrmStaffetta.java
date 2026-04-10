@@ -16,11 +16,6 @@ public class JFrmStaffetta extends javax.swing.JFrame {
      */
     public JFrmStaffetta() {
         initComponents();
-        
-        //CODICE PER IMMAGINE
-        int s = lblThread1.getFont().getSize() + 4; //riga per delimitare la grandezza dell'immagine (grandezza font + 4)
-        ImageIcon icon = new ImageIcon(getClass().getResource("/threadrelay/corridore_emoji.png")); //prende il percorso nel quale si trova l'immagine
-        lblThread1.setIcon(new ImageIcon(icon.getImage().getScaledInstance(s, s, java.awt.Image.SCALE_SMOOTH))); //mette l'immagine e fa in modo che la grandezza dell'immagine si scali in maniera proporzionata
     }
 
     /**
@@ -33,11 +28,11 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBase = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        lblThread3 = new javax.swing.JLabel();
         pgbRunner3 = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
+        lblThread2 = new javax.swing.JLabel();
         pgbRunner2 = new javax.swing.JProgressBar();
-        jLabel4 = new javax.swing.JLabel();
+        lblThread4 = new javax.swing.JLabel();
         pgbRunner4 = new javax.swing.JProgressBar();
         lblThread1 = new javax.swing.JLabel();
         pgbRunner1 = new javax.swing.JProgressBar();
@@ -63,30 +58,27 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         pnlBase.setLayout(null);
 
-        jLabel3.setText("jLabel3");
-        pnlBase.add(jLabel3);
-        jLabel3.setBounds(20, 150, 38, 16);
+        lblThread3.setText("🏃‍");
+        pnlBase.add(lblThread3);
+        lblThread3.setBounds(20, 150, 12, 16);
         pnlBase.add(pgbRunner3);
         pgbRunner3.setBounds(6, 128, 379, 55);
 
-        jLabel2.setText("jLabel2");
-        pnlBase.add(jLabel2);
-        jLabel2.setBounds(20, 90, 38, 16);
+        lblThread2.setText("🏃‍");
+        pnlBase.add(lblThread2);
+        lblThread2.setBounds(20, 90, 12, 16);
         pnlBase.add(pgbRunner2);
         pgbRunner2.setBounds(6, 67, 379, 55);
 
-        jLabel4.setText("jLabel4");
-        pnlBase.add(jLabel4);
-        jLabel4.setBounds(20, 210, 38, 16);
+        lblThread4.setText("🏃‍");
+        pnlBase.add(lblThread4);
+        lblThread4.setBounds(20, 210, 12, 16);
         pnlBase.add(pgbRunner4);
         pgbRunner4.setBounds(6, 189, 379, 55);
 
-        lblThread1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
-        lblThread1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/threadrelay/corridore_emoji.png"))); // NOI18N
-        lblThread1.setMaximumSize(new java.awt.Dimension(256, 256));
-        lblThread1.setMinimumSize(new java.awt.Dimension(256, 256));
+        lblThread1.setText("🏃‍");
         pnlBase.add(lblThread1);
-        lblThread1.setBounds(20, 20, 50, 30);
+        lblThread1.setBounds(20, 30, 12, 16);
 
         pgbRunner1.setBackground(new java.awt.Color(204, 204, 204));
         pnlBase.add(pgbRunner1);
@@ -236,11 +228,15 @@ public class JFrmStaffetta extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlBase, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBase, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlBase, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -287,9 +283,6 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private javax.swing.JButton btnRiprendi;
     private javax.swing.JButton btnSospende;
     private javax.swing.JComboBox<String> cmbVelocita;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblRunner1;
     private javax.swing.JLabel lblRunner2;
     private javax.swing.JLabel lblRunner3;
@@ -299,6 +292,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private javax.swing.JLabel lblTempo3;
     private javax.swing.JLabel lblTempo4;
     private javax.swing.JLabel lblThread1;
+    private javax.swing.JLabel lblThread2;
+    private javax.swing.JLabel lblThread3;
+    private javax.swing.JLabel lblThread4;
     private javax.swing.JProgressBar pgbRunner1;
     private javax.swing.JProgressBar pgbRunner2;
     private javax.swing.JProgressBar pgbRunner3;
