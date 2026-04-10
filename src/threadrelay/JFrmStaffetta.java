@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package threadrelay;
+import javax.swing.*; //import libreria java swing per immagine
 
 /**
  *
@@ -15,6 +16,11 @@ public class JFrmStaffetta extends javax.swing.JFrame {
      */
     public JFrmStaffetta() {
         initComponents();
+        
+        //CODICE PER IMMAGINE
+        int s = lblThread1.getFont().getSize() + 4; //riga per delimitare la grandezza dell'immagine (grandezza font + 4)
+        ImageIcon icon = new ImageIcon(getClass().getResource("/threadrelay/corridore_emoji.png")); //prende il percorso nel quale si trova l'immagine
+        lblThread1.setIcon(new ImageIcon(icon.getImage().getScaledInstance(s, s, java.awt.Image.SCALE_SMOOTH))); //mette l'immagine e fa in modo che la grandezza dell'immagine si scali in maniera proporzionata
     }
 
     /**
@@ -31,8 +37,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
         pgbRunner3 = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
         pgbRunner2 = new javax.swing.JProgressBar();
+        jLabel4 = new javax.swing.JLabel();
         pgbRunner4 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
+        lblThread1 = new javax.swing.JLabel();
         pgbRunner1 = new javax.swing.JProgressBar();
         cmbVelocita = new javax.swing.JComboBox<>();
         btnAvvia = new javax.swing.JButton();
@@ -58,21 +65,28 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
         pnlBase.add(jLabel3);
-        jLabel3.setBounds(20, 150, 37, 16);
+        jLabel3.setBounds(20, 150, 38, 16);
         pnlBase.add(pgbRunner3);
         pgbRunner3.setBounds(6, 128, 379, 55);
 
         jLabel2.setText("jLabel2");
         pnlBase.add(jLabel2);
-        jLabel2.setBounds(20, 90, 37, 16);
+        jLabel2.setBounds(20, 90, 38, 16);
         pnlBase.add(pgbRunner2);
         pgbRunner2.setBounds(6, 67, 379, 55);
+
+        jLabel4.setText("jLabel4");
+        pnlBase.add(jLabel4);
+        jLabel4.setBounds(20, 210, 38, 16);
         pnlBase.add(pgbRunner4);
         pgbRunner4.setBounds(6, 189, 379, 55);
 
-        jLabel1.setText("jLabel1");
-        pnlBase.add(jLabel1);
-        jLabel1.setBounds(20, 20, 37, 16);
+        lblThread1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        lblThread1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/threadrelay/corridore_emoji.png"))); // NOI18N
+        lblThread1.setMaximumSize(new java.awt.Dimension(256, 256));
+        lblThread1.setMinimumSize(new java.awt.Dimension(256, 256));
+        pnlBase.add(lblThread1);
+        lblThread1.setBounds(20, 20, 50, 30);
 
         pgbRunner1.setBackground(new java.awt.Color(204, 204, 204));
         pnlBase.add(pgbRunner1);
@@ -84,19 +98,19 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         btnAvvia.setText("Avvia");
         pnlBase.add(btnAvvia);
-        btnAvvia.setBounds(90, 250, 59, 22);
+        btnAvvia.setBounds(90, 250, 72, 23);
 
         btnSospende.setText("Sospendi");
         pnlBase.add(btnSospende);
-        btnSospende.setBounds(161, 250, 78, 22);
+        btnSospende.setBounds(161, 250, 79, 23);
 
         btnFerma.setText("Ferma");
         pnlBase.add(btnFerma);
-        btnFerma.setBounds(245, 250, 63, 22);
+        btnFerma.setBounds(245, 250, 72, 23);
 
         btnRiprendi.setText("Riprendi");
         pnlBase.add(btnRiprendi);
-        btnRiprendi.setBounds(320, 250, 74, 22);
+        btnRiprendi.setBounds(320, 250, 75, 23);
 
         pnlRunner1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -273,9 +287,9 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private javax.swing.JButton btnRiprendi;
     private javax.swing.JButton btnSospende;
     private javax.swing.JComboBox<String> cmbVelocita;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblRunner1;
     private javax.swing.JLabel lblRunner2;
     private javax.swing.JLabel lblRunner3;
@@ -284,6 +298,7 @@ public class JFrmStaffetta extends javax.swing.JFrame {
     private javax.swing.JLabel lblTempo2;
     private javax.swing.JLabel lblTempo3;
     private javax.swing.JLabel lblTempo4;
+    private javax.swing.JLabel lblThread1;
     private javax.swing.JProgressBar pgbRunner1;
     private javax.swing.JProgressBar pgbRunner2;
     private javax.swing.JProgressBar pgbRunner3;
