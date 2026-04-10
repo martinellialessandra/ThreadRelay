@@ -84,23 +84,48 @@ public class JFrmStaffetta extends javax.swing.JFrame {
         pnlBase.add(pgbRunner1);
         pgbRunner1.setBounds(6, 6, 379, 55);
 
-        cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbVelocita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lento", "Normale", "Veloce" }));
+        cmbVelocita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbVelocitaActionPerformed(evt);
+            }
+        });
         pnlBase.add(cmbVelocita);
-        cmbVelocita.setBounds(12, 250, 72, 22);
+        cmbVelocita.setBounds(12, 250, 80, 22);
 
         btnAvvia.setText("Avvia");
+        btnAvvia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAvviaActionPerformed(evt);
+            }
+        });
         pnlBase.add(btnAvvia);
         btnAvvia.setBounds(90, 250, 72, 23);
 
         btnSospende.setText("Sospendi");
+        btnSospende.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSospendeActionPerformed(evt);
+            }
+        });
         pnlBase.add(btnSospende);
         btnSospende.setBounds(170, 250, 80, 23);
 
         btnFerma.setText("Ferma");
+        btnFerma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFermaActionPerformed(evt);
+            }
+        });
         pnlBase.add(btnFerma);
         btnFerma.setBounds(260, 250, 72, 23);
 
         btnRiprendi.setText("Riprendi");
+        btnRiprendi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRiprendiActionPerformed(evt);
+            }
+        });
         pnlBase.add(btnRiprendi);
         btnRiprendi.setBounds(340, 250, 80, 23);
 
@@ -241,6 +266,26 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbVelocitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbVelocitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbVelocitaActionPerformed
+
+    private void btnAvviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvviaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAvviaActionPerformed
+
+    private void btnSospendeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSospendeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSospendeActionPerformed
+
+    private void btnFermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFermaActionPerformed
+
+    private void btnRiprendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRiprendiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRiprendiActionPerformed
 
     /**
      * @param args the command line arguments
