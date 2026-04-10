@@ -94,15 +94,15 @@ public class JFrmStaffetta extends javax.swing.JFrame {
 
         btnSospende.setText("Sospendi");
         pnlBase.add(btnSospende);
-        btnSospende.setBounds(161, 250, 79, 23);
+        btnSospende.setBounds(170, 250, 80, 23);
 
         btnFerma.setText("Ferma");
         pnlBase.add(btnFerma);
-        btnFerma.setBounds(245, 250, 72, 23);
+        btnFerma.setBounds(260, 250, 72, 23);
 
         btnRiprendi.setText("Riprendi");
         pnlBase.add(btnRiprendi);
-        btnRiprendi.setBounds(320, 250, 75, 23);
+        btnRiprendi.setBounds(340, 250, 80, 23);
 
         pnlRunner1.setBackground(new java.awt.Color(153, 204, 255));
 
