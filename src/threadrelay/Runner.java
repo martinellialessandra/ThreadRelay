@@ -30,7 +30,7 @@ public class Runner implements Runnable {
      * Alla fine segnala se ha finito
      */
     public void run(){
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 101; i++){
             if(Stop)return;          
                     synchronized (this) {
                 if (Pausa) {

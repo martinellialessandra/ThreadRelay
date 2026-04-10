@@ -294,15 +294,24 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     }//GEN-LAST:event_btnAvviaActionPerformed
 
     private void btnSospendeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSospendeActionPerformed
-        // TODO add your handling code here:
+        for (int i=0; i<4; i++){
+            partecipanti.get(i).pausa();
+        }
     }//GEN-LAST:event_btnSospendeActionPerformed
 
     private void btnFermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermaActionPerformed
-        // TODO add your handling code here:
+         for (int i=0; i<4; i++){
+            partecipanti.get(i).ferma();
+        }
+          for (int i=0; i<4; i++){
+            Thread.get(i).interrupt();
+        }
     }//GEN-LAST:event_btnFermaActionPerformed
 
     private void btnRiprendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRiprendiActionPerformed
-        // TODO add your handling code here:
+         for (int i=0; i<4; i++){
+            partecipanti.get(i).riprendi();
+        }
     }//GEN-LAST:event_btnRiprendiActionPerformed
 
     public void aggiornaValori(int valore, int nRunner){
