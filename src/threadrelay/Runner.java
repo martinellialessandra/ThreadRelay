@@ -24,10 +24,7 @@ public class Runner implements Runnable {
     }
     
      /**
-     * Fa avanzare la barra
-     * Si ferma se "Stop" è true e si mette in pausa se "Pausa" è true
-     * ha una velocità casuale
-     * Alla fine segnala se ha finito
+     *
      */
     public void run(){
         for(int i = 0; i < 101; i++){
