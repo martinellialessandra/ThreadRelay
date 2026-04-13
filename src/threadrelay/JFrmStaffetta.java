@@ -399,7 +399,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     //Se non ha finito (Else...) mostra il valore.
     public void aggiornaValori(int valore, int nRunner){
         if (nRunner==1){
-            pgbRunner1.setValue(valore);
+            pnl1.setValue(valore);
             if (valore==100){
              lblTempo1.setText("Fine");
             }
@@ -408,7 +408,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
             }
         }
         else if (nRunner==2){
-            pgbRunner2.setValue(valore);
+            pnl2.setValue(valore);
         if (valore==100){
             lblTempo2.setText("Fine");
         }
@@ -417,7 +417,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         }
         }
         else if (nRunner==3){
-            pgbRunner3.setValue(valore);
+            pnl3.setValue(valore);
         if (valore==100){
             lblTempo3.setText("Fine");
         }
@@ -426,7 +426,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         }
         }
         else if (nRunner==4){
-            pgbRunner4.setValue(valore);
+            pnl4.setValue(valore);
             if(valore==100){
                 lblTempo4.setText("Fine");
             }
