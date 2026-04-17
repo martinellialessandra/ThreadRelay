@@ -34,9 +34,13 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         pnlBase = new javax.swing.JPanel();
         cmbVelocita = new javax.swing.JComboBox<>();
         btnAvvia = new javax.swing.JButton();
-        btnSospende = new javax.swing.JButton();
+        btnSospendi = new javax.swing.JButton();
         btnFerma = new javax.swing.JButton();
         btnRiprendi = new javax.swing.JButton();
+        lblThread4 = new javax.swing.JLabel();
+        lblThread3 = new javax.swing.JLabel();
+        lblThread2 = new javax.swing.JLabel();
+        lblThread1 = new javax.swing.JLabel();
         pnlRunner1 = new javax.swing.JPanel();
         lblRunner1 = new javax.swing.JLabel();
         lblTempo1 = new javax.swing.JLabel();
@@ -49,14 +53,10 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         pnlRunner2 = new javax.swing.JPanel();
         lblRunner2 = new javax.swing.JLabel();
         lblTempo2 = new javax.swing.JLabel();
-        pnl1 = new javax.swing.JPanel();
-        lblThread2 = new javax.swing.JLabel();
-        pnl2 = new javax.swing.JPanel();
-        lblThread3 = new javax.swing.JLabel();
-        pnl3 = new javax.swing.JPanel();
-        lblThread4 = new javax.swing.JLabel();
-        pnl4 = new javax.swing.JPanel();
-        lblThread1 = new javax.swing.JLabel();
+        pgbRunner1 = new javax.swing.JProgressBar();
+        pgbRunner3 = new javax.swing.JProgressBar();
+        pgbRunner2 = new javax.swing.JProgressBar();
+        pgbRunner4 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,7 +69,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
             }
         });
         pnlBase.add(cmbVelocita);
-        cmbVelocita.setBounds(12, 250, 74, 22);
+        cmbVelocita.setBounds(12, 250, 75, 22);
 
         btnAvvia.setText("Avvia");
         btnAvvia.addActionListener(new java.awt.event.ActionListener() {
@@ -80,16 +80,18 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         pnlBase.add(btnAvvia);
         btnAvvia.setBounds(90, 250, 72, 23);
 
-        btnSospende.setText("Sospendi");
-        btnSospende.addActionListener(new java.awt.event.ActionListener() {
+        btnSospendi.setText("Sospendi");
+        btnSospendi.setEnabled(false);
+        btnSospendi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSospendeActionPerformed(evt);
+                btnSospendiActionPerformed(evt);
             }
         });
-        pnlBase.add(btnSospende);
-        btnSospende.setBounds(170, 250, 80, 23);
+        pnlBase.add(btnSospendi);
+        btnSospendi.setBounds(170, 250, 80, 23);
 
         btnFerma.setText("Ferma");
+        btnFerma.setEnabled(false);
         btnFerma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFermaActionPerformed(evt);
@@ -99,6 +101,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         btnFerma.setBounds(260, 250, 72, 23);
 
         btnRiprendi.setText("Riprendi");
+        btnRiprendi.setEnabled(false);
         btnRiprendi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRiprendiActionPerformed(evt);
@@ -106,6 +109,22 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         });
         pnlBase.add(btnRiprendi);
         btnRiprendi.setBounds(340, 250, 80, 23);
+
+        lblThread4.setText("🏃");
+        pnlBase.add(lblThread4);
+        lblThread4.setBounds(20, 210, 12, 16);
+
+        lblThread3.setText("🏃");
+        pnlBase.add(lblThread3);
+        lblThread3.setBounds(20, 150, 12, 16);
+
+        lblThread2.setText("🏃");
+        pnlBase.add(lblThread2);
+        lblThread2.setBounds(20, 90, 12, 16);
+
+        lblThread1.setText("🏃");
+        pnlBase.add(lblThread1);
+        lblThread1.setBounds(20, 30, 12, 16);
 
         pnlRunner1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -226,102 +245,14 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
 
         pnlBase.add(pnlRunner2);
         pnlRunner2.setBounds(397, 67, 122, 55);
-
-        pnl1.setBackground(new java.awt.Color(204, 204, 204));
-
-        lblThread2.setText("🏃‍");
-
-        javax.swing.GroupLayout pnl1Layout = new javax.swing.GroupLayout(pnl1);
-        pnl1.setLayout(pnl1Layout);
-        pnl1Layout.setHorizontalGroup(
-            pnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblThread2)
-                .addContainerGap(352, Short.MAX_VALUE))
-        );
-        pnl1Layout.setVerticalGroup(
-            pnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl1Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblThread2)
-                .addContainerGap())
-        );
-
-        pnlBase.add(pnl1);
-        pnl1.setBounds(10, 20, 370, 40);
-
-        pnl2.setBackground(new java.awt.Color(204, 204, 204));
-
-        lblThread3.setText("🏃‍");
-
-        javax.swing.GroupLayout pnl2Layout = new javax.swing.GroupLayout(pnl2);
-        pnl2.setLayout(pnl2Layout);
-        pnl2Layout.setHorizontalGroup(
-            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblThread3)
-                .addContainerGap(352, Short.MAX_VALUE))
-        );
-        pnl2Layout.setVerticalGroup(
-            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblThread3)
-                .addContainerGap())
-        );
-
-        pnlBase.add(pnl2);
-        pnl2.setBounds(10, 80, 370, 40);
-
-        pnl3.setBackground(new java.awt.Color(204, 204, 204));
-
-        lblThread4.setText("🏃‍");
-
-        javax.swing.GroupLayout pnl3Layout = new javax.swing.GroupLayout(pnl3);
-        pnl3.setLayout(pnl3Layout);
-        pnl3Layout.setHorizontalGroup(
-            pnl3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblThread4)
-                .addContainerGap(352, Short.MAX_VALUE))
-        );
-        pnl3Layout.setVerticalGroup(
-            pnl3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl3Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblThread4)
-                .addContainerGap())
-        );
-
-        pnlBase.add(pnl3);
-        pnl3.setBounds(10, 140, 370, 40);
-
-        pnl4.setBackground(new java.awt.Color(204, 204, 204));
-
-        lblThread1.setText("🏃‍");
-
-        javax.swing.GroupLayout pnl4Layout = new javax.swing.GroupLayout(pnl4);
-        pnl4.setLayout(pnl4Layout);
-        pnl4Layout.setHorizontalGroup(
-            pnl4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblThread1)
-                .addContainerGap(352, Short.MAX_VALUE))
-        );
-        pnl4Layout.setVerticalGroup(
-            pnl4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl4Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblThread1)
-                .addContainerGap())
-        );
-
-        pnlBase.add(pnl4);
-        pnl4.setBounds(10, 200, 370, 40);
+        pnlBase.add(pgbRunner1);
+        pgbRunner1.setBounds(10, 10, 380, 50);
+        pnlBase.add(pgbRunner3);
+        pgbRunner3.setBounds(10, 130, 380, 50);
+        pnlBase.add(pgbRunner2);
+        pgbRunner2.setBounds(10, 70, 380, 50);
+        pnlBase.add(pgbRunner4);
+        pgbRunner4.setBounds(10, 190, 380, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -346,6 +277,10 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     }//GEN-LAST:event_cmbVelocitaActionPerformed
 
     private void btnAvviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvviaActionPerformed
+        btnAvvia.setEnabled(false);
+        btnFerma.setEnabled(true);
+        btnSospendi.setEnabled(true);
+        
         //Vario la velocità 
         //La scelgo nella combo box.
         int velocita = 0;
@@ -368,17 +303,25 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
         Thread.get(0).start();
     }//GEN-LAST:event_btnAvviaActionPerformed
 
-    private void btnSospendeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSospendeActionPerformed
+    private void btnSospendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSospendiActionPerformed
+        btnSospendi.setEnabled(false);
+        btnRiprendi.setEnabled(true);
+        
         //Ferma i thread
         for (int i=0; i<4; i++){
             partecipanti.get(i).pausa();
         }
-    }//GEN-LAST:event_btnSospendeActionPerformed
+    }//GEN-LAST:event_btnSospendiActionPerformed
 
     private void btnFermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermaActionPerformed
-         //Prende i runner e li ferma
-         //Interrompe i thread
-         //Pulisce tutto (svuotando la lista dei thread e di runners)
+        btnFerma.setEnabled(false);
+        btnSospendi.setEnabled(false);
+        btnRiprendi.setEnabled(false);
+        btnAvvia.setEnabled(true);
+        
+        //Prende i runner e li ferma
+        //Interrompe i thread
+        //Pulisce tutto (svuotando la lista dei thread e di runners)
         for (int i=0; i<4; i++){
             partecipanti.get(i).ferma();
         }
@@ -390,7 +333,10 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     }//GEN-LAST:event_btnFermaActionPerformed
 
     private void btnRiprendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRiprendiActionPerformed
-         //Fa riprendere i thread
+        btnRiprendi.setEnabled(false);
+        btnSospendi.setEnabled(true);
+        
+        //Fa riprendere i thread
         for (int i=0; i<4; i++){
             partecipanti.get(i).riprendi();
         }
@@ -398,43 +344,59 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     //Mostra "Fine" nella label quando un Runner ha corso.
     //Se non ha finito (Else...) mostra il valore.
     public void aggiornaValori(int valore, int nRunner){
-        if (nRunner==1){
-            pnl1.setValue(valore);
-            if (valore==100){
-             lblTempo1.setText("Fine");
-            }
-            else {
+        if (nRunner == 1){
+            pgbRunner1.setValue(valore);
+            aggiornaLabel(pgbRunner1, lblThread1);
+            if (valore == 100){
+                lblTempo1.setText("Fine");
+            } else {
                 lblTempo1.setText(String.valueOf(valore));
             }
         }
-        else if (nRunner==2){
-            pnl2.setValue(valore);
-        if (valore==100){
-            lblTempo2.setText("Fine");
-        }
-        else {
-            lblTempo2.setText(String.valueOf(valore));
-        }
-        }
-        else if (nRunner==3){
-            pnl3.setValue(valore);
-        if (valore==100){
-            lblTempo3.setText("Fine");
-        }
-        else {
-            lblTempo3.setText(String.valueOf(valore));
-        }
-        }
-        else if (nRunner==4){
-            pnl4.setValue(valore);
-            if(valore==100){
-                lblTempo4.setText("Fine");
+
+        else if (nRunner == 2){
+            pgbRunner2.setValue(valore);
+            aggiornaLabel(pgbRunner2, lblThread2);
+            if (valore == 100){
+                lblTempo2.setText("Fine");
+            } else {
+                lblTempo2.setText(String.valueOf(valore));
             }
-            else {
+        }
+
+        else if (nRunner == 3){
+            pgbRunner3.setValue(valore);
+            aggiornaLabel(pgbRunner3, lblThread3);
+            if (valore == 100){
+                lblTempo3.setText("Fine");
+            } else {
+                lblTempo3.setText(String.valueOf(valore));
+            }
+        }
+
+        else if (nRunner == 4){
+            pgbRunner4.setValue(valore);
+            aggiornaLabel(pgbRunner4, lblThread4);
+            if (valore == 100){
+                lblTempo4.setText("Fine");
+            } else {
                 lblTempo4.setText(String.valueOf(valore));
             }
         }
     }
+    
+    private void aggiornaLabel(JProgressBar bar, JLabel lbl) {
+        int min = bar.getMinimum();
+        int max = bar.getMaximum();
+        int value = bar.getValue();
+
+        int barWidth = bar.getWidth();
+
+        int x = bar.getX() + (value - min) * barWidth / (max - min);
+
+        lbl.setLocation(x, lbl.getY());
+    }
+    
     //Controlla che il thread non è il quarto (Che non è l'ultimo)
     //Fa partire il thread successivo.
     public void prossimoThread(int nRunner){
@@ -481,7 +443,7 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     private javax.swing.JButton btnAvvia;
     private javax.swing.JButton btnFerma;
     private javax.swing.JButton btnRiprendi;
-    private javax.swing.JButton btnSospende;
+    private javax.swing.JButton btnSospendi;
     private javax.swing.JComboBox<String> cmbVelocita;
     private javax.swing.JLabel lblRunner1;
     private javax.swing.JLabel lblRunner2;
@@ -495,10 +457,10 @@ public class JFrmStaffetta extends javax.swing.JFrame implements Listener{
     private javax.swing.JLabel lblThread2;
     private javax.swing.JLabel lblThread3;
     private javax.swing.JLabel lblThread4;
-    private javax.swing.JPanel pnl1;
-    private javax.swing.JPanel pnl2;
-    private javax.swing.JPanel pnl3;
-    private javax.swing.JPanel pnl4;
+    private javax.swing.JProgressBar pgbRunner1;
+    private javax.swing.JProgressBar pgbRunner2;
+    private javax.swing.JProgressBar pgbRunner3;
+    private javax.swing.JProgressBar pgbRunner4;
     private javax.swing.JPanel pnlBase;
     private javax.swing.JPanel pnlRunner1;
     private javax.swing.JPanel pnlRunner2;
