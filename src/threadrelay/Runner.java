@@ -4,72 +4,107 @@
  */
 package threadrelay;
 
+import java.util.*;
+
 /**
  *
  * @author Alessandra Martinell
  */
-public class Runner implements Runnable {
-    private boolean Pausa;
-    private boolean Stop;
-    private int Ritardo;
-    private int nRunner;
-    private Listener listener;
+public class Runner implements Runnable, Subject {
+    private final int identificativo;
+    private int velocita;
+    private int posizione = 0;
+    private Runner prossimoRunner;
+    private volatile boolean inPausa, fermato;
+    private final ArrayList<Observer> observers;
 
-    public Runner(int Ritardo, int nRunner, Listener listener) {
-        this.Ritardo = Ritardo;
-        this.nRunner = nRunner;
-        this.listener = listener;
-        Stop = false;
-        Pausa = false;
+    public Runner(int identificativo, int velocita) {
+        this.identificativo = identificativo;
+        this.velocita = velocita;
+        this.observers = new ArrayList<>();
     }
-    
-     /**
-     *
-     */
-    public void run(){
-        for(int i = 0; i < 101; i++){
-            if(Stop)return;          
-                    synchronized (this) {
-                if (Pausa) {
+
+    public void setProssimoRunner(Runner prossimoRunner) {
+        this.prossimoRunner = prossimoRunner;
+    }
+
+
+    @Override
+    public synchronized void addObserver(Observer o) {
+        if (!observers.contains(o)) {
+            observers.add(o);
+        }
+    }
+
+    @Override
+    public synchronized void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    @Override
+    public synchronized void notifyObservers(int posizione) {
+        List<Observer> copia = new ArrayList<>(observers);
+        for (Observer o : copia) {
+            o.update(identificativo, posizione);
+        }
+    }
+
+    @Override
+    public synchronized void notifyFineCorsa() {
+        List<Observer> copia = new ArrayList<>(observers);
+        for (Observer o : copia) {
+            o.corsaFinita(identificativo);
+        }
+    }
+
+
+    @Override
+    public void run() {
+        for (int i = 0; i <= 99; i++) {
+
+            if (fermato) break;
+
+            synchronized (this) {
+                while (inPausa) {
                     try {
                         wait();
-                    } catch (InterruptedException ignored) {
-                        System.out.println(ignored.getMessage());
+                    } catch (InterruptedException ex) {
+                        if (fermato) return;
                     }
                 }
             }
-            if (i==90){
-                listener.prossimoThread(nRunner);
+
+            posizione = i;
+            notifyObservers(posizione);
+
+            // Passaggio del testimone: avvia il prossimo runner a posizione 90
+            if (prossimoRunner != null && posizione == 90) {
+                new Thread(prossimoRunner).start();
             }
-            listener.aggiornaValori(i, nRunner);
-            try{
-                Thread.sleep(Ritardo);
-            }catch(InterruptedException ie){
-                System.out.println("Thread interrotto");
+
+            try {
+                Thread.sleep(velocita);
+            } catch (InterruptedException ex) {
+                System.getLogger(Runner.class.getName())
+                        .log(System.Logger.Level.ERROR, "Errore:", ex);
             }
         }
+
+        notifyFineCorsa();
     }
-    
-    public synchronized void pausa(){
-        Pausa = true;
+
+    public void sospendi() {
+        inPausa = true;
     }
-    /**
-     * Metodo che riavvia il thread
-     */
-    public  synchronized void riprendi(){
-        Pausa = false;
+
+    public synchronized void riprendi() {
+        inPausa = false;
         notifyAll();
     }
-    /**
-     * Metodo che ferma completamente il thread
-     */
-    /**
-     * ferma il thread
-     * azzera la barra
-     */
-    public  synchronized void ferma(){
-        Stop = true;
-        Pausa = false;
+
+    public synchronized void ferma() {
+        fermato = true;
+        inPausa = false;
         notifyAll();
     }
-    }
+}
